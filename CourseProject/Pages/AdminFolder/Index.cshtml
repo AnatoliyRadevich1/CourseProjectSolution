@@ -1,0 +1,71 @@
+﻿@page
+@model CourseProject.Pages.AdminFolder.IndexModel
+@{
+}
+<br>
+<h2>Лист пользователей для администратора сайта</h2>
+<a class='btn btn-primary btn-sm' href='/AdminFolder/Create'>Добавить пользователя</a>
+<table class="table">
+    <thead>
+        <tr>
+			<th>Id</th>
+			<th>Username</th>
+			<th>Userpass</th>
+			<th>User_social_network_VK_acceess</th>
+			<th>User_social_network_FB_acceess</th>
+			<th>User_social_network_TG_acceess</th>
+			<th>User_page_address</th>
+			<th>User_name_of_review</th>
+			<th>User_group_of_review_for_films</th>
+			<th>User_group_of_review_for_books</th>
+			<th>User_group_of_review_for_games</th>
+			<th>User_tag</th>
+			<th>User_review_text</th>
+			<th>User_icon_address</th>
+			<th>User_marks</th>
+			<th>AnyUser_rate</th>
+			<th>Average_rate</th>
+			<th>User_dark_theme</th>
+			<th>User_language_selection</th>
+			<th>User_is_blocked</th>
+			<th>User_is_deleted</th>
+			<th>User_pdf_file_address</th>
+			<th>Buttons</th>
+        </tr>
+    </thead>
+	<tbody>
+		@foreach(var item in Model.myAdminInfo)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Username</td>
+				<td>@item.Userpass</td>
+				<td>@item.User_social_network_VK_acceess</td>
+				<td>@item.User_social_network_FB_acceess</td>
+				<td>@item.User_social_network_TG_acceess</td>
+				<td>@item.User_page_address</td>
+				<td>@item.User_name_of_review</td>
+				<td>@item.User_group_of_review_for_films</td>
+				<td>@item.User_group_of_review_for_books</td>
+				<td>@item.User_group_of_review_for_games</td>
+				<td>@item.User_tag</td>
+				<td>@item.User_review_text</td>
+				<td>@item.User_icon_address</td>
+				<td>@item.User_marks</td>
+				<td>@item.AnyUser_rate</td>
+				<td>@item.Average_rate</td>
+				<td>@item.User_dark_theme</td>
+				<td>@item.User_language_selection</td>
+				<td>@item.User_is_blocked</td>
+				<td>@item.User_is_deleted</td>
+				<td>@item.User_pdf_file_address</td>
+				<td>
+					<a class="btn btn-info btn-sm" href="/AdminFolder/Edit?id=@item.Id">Правка</a>
+					<a class="btn btn-warning btn-sm" href="/AdminFolder/Block?id=@item.Id">Блокировка</a>
+					<a class="btn btn-danger btn-sm" href="/AdminFolder/Delete?id=@item.Id">Удаление</a>
+				</td>
+			</tr>
+
+		}
+	</tbody>
+</table>
