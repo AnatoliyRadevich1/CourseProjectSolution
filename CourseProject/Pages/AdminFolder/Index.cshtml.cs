@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.SqlClient; //для использования класса SqlConnection
 
 namespace CourseProject.Pages.AdminFolder
 {
@@ -13,6 +13,7 @@ namespace CourseProject.Pages.AdminFolder
         {
             try
             {
+				//адрес взят из свойсва базы данных CourseDB.mdf (обозреватель серверов->CourseDB.mdf->Свойства->Ячейка правее Строки подключения)
 				string conectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pc\Desktop\ITransition\CourseProject\CourseProjectSolution\DataBase\SampleDatabaseWalkthrough\CourseDB.mdf;Integrated Security=True";
 				using (SqlConnection connection = new SqlConnection(conectionString))
 				{ 
@@ -47,6 +48,8 @@ namespace CourseProject.Pages.AdminFolder
 								adminInfo.User_is_blocked = reader.GetBoolean(19);
 								adminInfo.User_is_deleted = reader.GetBoolean(20);
 								adminInfo.User_pdf_file_address  = reader.GetString(21);
+
+								myAdminInfo.Add(adminInfo);
 							}
 						}
 					}

@@ -19,15 +19,15 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/AdminFolder/Index">Страничка для администратора</a>
                         </li>
-                        @*НЕ ЗАБУДЬ СЮДА ДОБАВИТЬ <li></li> для зарегистрированных и незарегистрированных пользователей (см. 27-29 строчки кода)*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RegisteredUserFolder/IndexRegUser">Зарегистрированный пользователь</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/NonRegisteredUserFolder/NonRegUserIndex">Незарегистрированный пользователь</a>
+                        </li>
+ 
                     </ul>
                 </div>
             </div>

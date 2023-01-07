@@ -1,0 +1,54 @@
+﻿@page
+@model CourseProject.Pages.NonRegisteredUserFolder.RegistrationButtonModel
+@{
+}
+<br>
+<h2>Регистрация нового пользователя</h2>
+
+@if (Model.errorMessageRegistration.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessageRegistration</strong>
+    </div>
+}
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Имя</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.nonRegisteredUser.Username">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.nonRegisteredUser.Userpass">
+        </div>
+    </div>
+ 
+    @if (Model.successMessageRegistration.Length != 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessageRegistration</strong>
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>Регистрация</button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-success">Подтвердить</button>
+        </div>
+
+        <div class="col-sm-3 d-grid">
+            <a class="btn-outline-success" href="/" role="button">Отменить</a>
+        </div>
+    </div>
+</form>

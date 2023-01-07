@@ -1,0 +1,43 @@
+﻿@page
+@model CourseProject.Pages.RegisteredUserFolder.IndexRegUserModel
+@{
+}
+<br>
+<h2>Лист для зарегистрированных пользователей</h2>
+<table class="table">
+    <thead>
+        <tr>
+			<th>Username</th>
+			<th>User_name_of_review</th>
+			<th>User_group_of_review_for_films</th>
+			<th>User_group_of_review_for_books</th>
+			<th>User_group_of_review_for_games</th>
+			<th>User_review_text</th>
+			<th>User_icon_address</th>
+			<th>User_marks</th>
+			<th>AnyUser_rate</th>
+			<th>Average_rate</th>
+			<th>User_dark_theme</th>
+			<th>User_language_selection</th>
+        </tr>
+    </thead>
+	<tbody>
+		@foreach(var item in Model.listRegisteredUsers)
+		{
+			<tr>
+				<td>@item.Username</td>
+				<td>@item.User_name_of_review</td>
+				<td>@item.User_group_of_review_for_films</td>
+				<td>@item.User_group_of_review_for_books</td>
+				<td>@item.User_group_of_review_for_games</td>
+				<td>@item.User_review_text</td>
+				<td>@item.User_icon_address</td>
+				<td>@item.User_marks</td>
+				<td>@item.AnyUser_rate</td>
+				<td>@item.Average_rate</td>
+				<td>@item.User_dark_theme</td>
+				<td>@item.User_language_selection</td>
+			</tr>
+		}
+	</tbody>
+</table>
